@@ -8,9 +8,18 @@
     x:DataType="viewmodel:LoginPageViewModel">
     <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
         <Label
+            FontFamily="WinterDrink"
             FontSize="50"
             HorizontalOptions="Center"
             Text="Login Page"
             TextColor="LightSkyBlue" />
+
+        <Entry Placeholder="הכנס שם" PlaceholderColor="MidnightBlue" />
+        <Entry
+            IsPassword="True"
+            Placeholder="הכנס סיסמה"
+            PlaceholderColor="MidnightBlue" />
+        <Button Text="התחבר" WidthRequest="150" />
+
     </VerticalStackLayout>
 </ContentPage>
