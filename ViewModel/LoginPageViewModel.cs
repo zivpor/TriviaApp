@@ -21,5 +21,10 @@ namespace TriviaApp.ViewModel
         {
 
         }
+
+        public void Login()
+        {
+
+        }
     }
 }
