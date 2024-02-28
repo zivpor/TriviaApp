@@ -5,6 +5,7 @@
              Title="UserAdminPage"
              xmlns:Models="clr-namespace:TriviaApp.Models"
              xmlns:vm="clr-namespace:TriviaApp.ViewModel"
+             x:DataType="vm:UserAdminPageViewModel"
              >
     <VerticalStackLayout>
         <Label 
