@@ -15,7 +15,7 @@ namespace TriviaApp
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                     fonts.AddFont("WinterDrink.ttf", "WinterDrink");
                 });
-
+            //builder
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
