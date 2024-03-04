@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using TriviaApp.Services;
+using TriviaApp.ViewModel;
 
 namespace TriviaApp
 {
@@ -16,8 +18,10 @@ namespace TriviaApp
                     fonts.AddFont("WinterDrink.ttf", "WinterDrink");
                 });
             //builder
+           
+
 #if DEBUG
-		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

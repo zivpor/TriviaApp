@@ -10,5 +10,6 @@ namespace TriviaApp.ViewModel
 {
     public class ApproveQuestionsPageViewModel:ViewModel
     {
+
     }
 }
