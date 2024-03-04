@@ -7,7 +7,7 @@ using TriviaApp.Models;
 
 namespace TriviaApp.Services
 {
-    internal class TriviaAppService
+    public class TriviaAppService
     {
         List<User> users;
 
@@ -30,7 +30,10 @@ namespace TriviaApp.Services
             return this.users.OrderByDescending(u => u.Points).ToList();
         }
 
-        
+        public List<User> GetUser()
+        {
+            return users;
+        }
 
     }
 }
