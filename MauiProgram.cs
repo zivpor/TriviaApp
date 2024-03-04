@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using TriviaApp.Services;
+using TriviaApp.View;
 using TriviaApp.ViewModel;
 
 namespace TriviaApp
@@ -18,7 +19,17 @@ namespace TriviaApp
                     fonts.AddFont("WinterDrink.ttf", "WinterDrink");
                 });
             //builder
-           
+            //register services
+            builder.Services.AddSingleton<TriviaAppService>();
+
+            builder.Services.AddTransient<LoginPageViewModel>();
+            builder.Services.AddTransient<UserAdminPageViewModel>();
+            builder.Services.AddTransient<UserQuestionsPageViewModel>();
+            builder.Services.AddTransient<BestScoresPageViewModel>();
+            builder.Services.AddTransient<LoginPage>();
+            builder.Services.AddTransient<UserAdminPage>();
+            builder.Services.AddTransient<UserQuestionsPage>();
+            builder.Services.AddTransient<BestScoresPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();
