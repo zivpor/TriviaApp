@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TriviaApp.View.BestScoresPage"
-             Title="BestScoresPage"
-             xmlns:Models="clr-namespace:TriviaApp.Models"
-             xmlns:vm="clr-namespace:TriviaApp.ViewModel"
-             x:DataType="vm:BestScoresPageViewModel"
-             >
+<ContentPage
+    x:Class="TriviaApp.View.BestScoresPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Models="clr-namespace:TriviaApp.Models"
+    xmlns:vm="clr-namespace:TriviaApp.ViewModel"
+    Title="BestScoresPage"
+    x:DataType="vm:BestScoresPageViewModel">
     <VerticalStackLayout>
-        <Label 
+        <Label />
+        <CollectionView ItemsSource="{Binding }">
             
+        </CollectionView>
+
     </VerticalStackLayout>
 </ContentPage>
