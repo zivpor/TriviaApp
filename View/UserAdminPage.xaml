@@ -1,22 +1,51 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TriviaApp.View.UserAdminPage"
-             Title="UserAdminPage"
-             xmlns:Models="clr-namespace:TriviaApp.Models"
-             xmlns:vm="clr-namespace:TriviaApp.ViewModel"
-             x:DataType="vm:UserAdminPageViewModel"
-             >
+<ContentPage
+    x:Class="TriviaApp.View.UserAdminPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:Models="clr-namespace:TriviaApp.Models"
+    xmlns:vm="clr-namespace:TriviaApp.ViewModel"
+    Title="UserAdminPage"
+    x:DataType="vm:UserAdminPageViewModel">
     <VerticalStackLayout>
         <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}">
-        <ScrollView Margin="10">
-            <CollectionView x:Name="colview" ItemsSource="{Binding Users}" EmptyView ="אין מה לחפש פה:_(">
-                <CollectionView.ItemsLayout>
-                    <LinearItemsLayout ItemSpacing="4" Orientation="Vertical" />
-                </CollectionView.ItemsLayout>
-                   
+            <ScrollView Margin="10">
+                <CollectionView
+                    x:Name="colview"
+                    EmptyView="אין מה לחפש פה:_("
+                    ItemsSource="{Binding Users}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout ItemSpacing="4" Orientation="Vertical" />
+                        <DataTemplate x:DataType="Models:User">
+                            <Grid
+                                Margin="10"
+                                ColumnDefinitions="auto,auto"
+                                ColumnSpacing="2">
+                                <Label
+                                    HeightRequest="100"
+                                    Text="{Binding UserName}"
+                                    VerticalOptions="Center"
+                                    WidthRequest="100" />
+                                <Label
+                                    Grid.Column="1"
+                                    HorizontalOptions="End"
+                                    Text="{Binding Email}" />
+                                <Label
+                                    Grid.Column="1"
+                                    HorizontalOptions="End"
+                                    Text="{Binding Rank}" />
+                                <Label
+                                    Grid.Column="1"
+                                    HorizontalOptions="End"
+                                    Text="{Binding Points}" />
+
+
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemsLayout>
+
                 </CollectionView>
-        </ScrollView>
+            </ScrollView>
         </RefreshView>
     </VerticalStackLayout>
 </ContentPage>
