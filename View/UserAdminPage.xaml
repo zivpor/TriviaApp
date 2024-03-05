@@ -14,9 +14,7 @@
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout ItemSpacing="4" Orientation="Vertical" />
                 </CollectionView.ItemsLayout>
-                    <DataTemplate x:DataType="models:User">
-                        
-                        </DataTemplate>
+                   
                 </CollectionView>
         </ScrollView>
         </RefreshView>
