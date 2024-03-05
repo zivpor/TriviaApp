@@ -8,9 +8,17 @@
              x:DataType="vm:UserAdminPageViewModel"
              >
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <RefreshView Command="{Binding RefreshCommand}" IsRefreshing="{Binding IsRefreshing}">
+        <ScrollView Margin="10">
+            <CollectionView x:Name="colview" ItemsSource="{Binding Users}" EmptyView ="אין מה לחפש פה:_(">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="4" Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+                    <DataTemplate x:DataType="models:User">
+                        
+                        </DataTemplate>
+                </CollectionView>
+        </ScrollView>
+        </RefreshView>
     </VerticalStackLayout>
 </ContentPage>
