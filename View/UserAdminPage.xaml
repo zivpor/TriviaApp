@@ -16,11 +16,10 @@
                     ItemsSource="{Binding Users}">
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout ItemSpacing="4" Orientation="Vertical" />
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="Models:User">
-                            <Grid>
-                                <Label Text="Insert the player:"/>
-                                <Entry Placeholder="הכנס שם משתמש"/>
-                            </Grid>
                             <SwipeView>
                                 <SwipeView.LeftItems>
                                     <SwipeItem
@@ -32,36 +31,42 @@
                                         CommandParameter="{Binding}"
                                         Text="Reset" />
                                 </SwipeView.LeftItems>
+
+                                <Grid
+                                    Margin="10"
+                                    ColumnDefinitions="auto,auto"
+                                    ColumnSpacing="2">
+                                    <Label
+                                        HeightRequest="100"
+                                        Text="{Binding UserName}"
+                                        VerticalOptions="Center"
+                                        WidthRequest="100" />
+                                    <Label
+                                        Grid.Column="1"
+                                        HorizontalOptions="End"
+                                        Text="{Binding Email}" />
+                                    <Label
+                                        Grid.Column="1"
+                                        HorizontalOptions="End"
+                                        Text="{Binding Rank}" />
+                                    <Label
+                                        Grid.Column="1"
+                                        HorizontalOptions="End"
+                                        Text="{Binding Points}" />
+
+
+                                </Grid>
                             </SwipeView>
-                            <Grid
-                                Margin="10"
-                                ColumnDefinitions="auto,auto"
-                                ColumnSpacing="2">
-                                <Label
-                                    HeightRequest="100"
-                                    Text="{Binding UserName}"
-                                    VerticalOptions="Center"
-                                    WidthRequest="100" />
-                                <Label
-                                    Grid.Column="1"
-                                    HorizontalOptions="End"
-                                    Text="{Binding Email}" />
-                                <Label
-                                    Grid.Column="1"
-                                    HorizontalOptions="End"
-                                    Text="{Binding Rank}" />
-                                <Label
-                                    Grid.Column="1"
-                                    HorizontalOptions="End"
-                                    Text="{Binding Points}" />
-
-
-                            </Grid>
                         </DataTemplate>
-                    </CollectionView.ItemsLayout>
+                    </CollectionView.ItemTemplate>
+
 
                 </CollectionView>
             </ScrollView>
         </RefreshView>
+
+        <Label Text="Insert the player:" />
+        <Entry Placeholder="הכנס שם משתמש" />
+
     </VerticalStackLayout>
 </ContentPage>
