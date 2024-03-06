@@ -17,6 +17,22 @@
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout ItemSpacing="4" Orientation="Vertical" />
                         <DataTemplate x:DataType="Models:User">
+                            <Grid>
+                                <Label Text="Insert the player:"/>
+                                <Entry Placeholder="הכנס שם משתמש"/>
+                            </Grid>
+                            <SwipeView>
+                                <SwipeView.LeftItems>
+                                    <SwipeItem
+                                        Command="{Binding BindingContext.DeleteCommand, Source={x:Reference cv}}"
+                                        CommandParameter="{Binding}"
+                                        Text="Delete" />
+                                    <SwipeItem
+                                        Command="{Binding BindingContext.ResetCommand, Source={x:Reference cv}}"
+                                        CommandParameter="{Binding}"
+                                        Text="Reset" />
+                                </SwipeView.LeftItems>
+                            </SwipeView>
                             <Grid
                                 Margin="10"
                                 ColumnDefinitions="auto,auto"

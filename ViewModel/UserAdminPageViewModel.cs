@@ -23,6 +23,7 @@ namespace TriviaApp.ViewModel
         public ICommand LoadUsersCommand { get; private set; }
         public ICommand RefreshCommand { get; private set; }
         public ICommand DeleteCommand { get; private set; }
+        public ICommand ResetCommand { get; private set; }
 
         public UserAdminPageViewModel(TriviaAppService service)
         {
@@ -30,6 +31,7 @@ namespace TriviaApp.ViewModel
             RefreshCommand = new Command(async () => await Refresh());
             LoadUsersCommand = new Command(async () => await LoadUsers());
             DeleteCommand = new Command((object obj) => Delete(obj));
+            ResetCommand=new Command((object obj)=> Reset(obj));
             this.service = service;
         }
 
@@ -55,6 +57,11 @@ namespace TriviaApp.ViewModel
             User s = obj as User;
             if (s != null)
                 Users.Remove(s);		
+        }
+        private void Reset(object obj)
+        {
+            User s = obj as User;
+            s.Points = 0;
         }
 
 
